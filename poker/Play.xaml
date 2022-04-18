@@ -1,0 +1,167 @@
+﻿<Page x:Class="poker.Play"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="600"
+      ShowsNavigationUI="False"
+      Background="Green"
+	Title="Play">
+
+    <Page.Resources>
+        <Style x:Key="CardStyle" TargetType="Image">
+            <Setter Property="Width" Value="70" />
+            <Setter Property="Height" Value="95" />
+        </Style>
+        <Style x:Key="ScoreTextStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="30" />
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+             <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+    </Page.Resources>
+
+    <Grid Height="700"
+          Width="500"
+          Background="Green">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Grid.Column="1"
+               Grid.Row="6"
+               Focusable="True"
+               Tag="P1_Card1"
+               MouseUp="selectCard"
+               Name="p1card1"
+               Style="{StaticResource CardStyle}"
+               Source="{Binding P1_Card1}" />
+
+        <Image Grid.Column="2"
+               Grid.Row="6"
+               Focusable="True"
+               Tag="P1_Card2"
+               MouseUp="selectCard"
+               Name="p1card2"
+               Style="{StaticResource CardStyle}"
+               Source="{Binding P1_Card2}" />
+
+        <Image Grid.Column="3"
+               Grid.Row="6"
+               Focusable="True"
+               Tag="P1_Card3"
+               MouseUp="selectCard"
+               Name="p1card3"
+               Style="{StaticResource CardStyle}"
+               Source="{Binding P1_Card3}" />
+
+        <Image Grid.Column="4"
+               Grid.Row="6"
+               Focusable="True"
+               Tag="P1_Card4"
+               MouseUp="selectCard"
+               Name="p1card4"
+               Style="{StaticResource CardStyle}"
+               Source="{Binding P1_Card4}" />
+
+        <Image Grid.Column="5"
+               Grid.Row="6"
+               Focusable="True"
+               Tag="P1_Card5"
+               MouseUp="selectCard"
+               Name="p1card5"
+               Style="{StaticResource CardStyle}"
+               Source="{Binding P1_Card5}" />
+
+        <Button Click="pressBtn"
+                Grid.Column="6"
+                Grid.Row="6"
+                Height="50"
+                Margin="5,5,5,5"
+                Name="controlBtn">
+            Sub</Button>
+
+        <Button Click="pressLoadBtn"
+                Grid.Column="6"
+                Grid.Row="0"
+                Height="40"
+                Margin="5,5,5,5"
+                VerticalAlignment="Top"
+                Name="loadBtn">
+            Load</Button>
+
+        <Button Click="pressSaveBtn"
+                Grid.Column="6"
+                Grid.Row="0"
+                Height="40"
+                Margin="5,5,5,5"
+                VerticalAlignment="Bottom"
+                Name="saveBtn">
+            Save</Button>
+        
+        <Image Grid.Column="3"
+               Grid.Row="4"
+               Name="p1played"
+               Source="{Binding P1_Played}" />
+
+        <Image Grid.Column="3"
+               Grid.Row="2"
+               Name="p2played"
+               Source="{Binding P2_Played}" />
+
+        <Image Grid.Column="1"
+               Grid.Row="0"
+               Style="{StaticResource CardStyle}"
+               Name="p2card1"
+               Source="{Binding P2_Card1}"/>
+
+        <Image Grid.Column="2"
+               Grid.Row="0"
+               Style="{StaticResource CardStyle}"
+               Name="p2card2"
+               Source="{Binding P2_Card2}" />
+
+        <Image Grid.Column="3"
+               Grid.Row="0"
+               Style="{StaticResource CardStyle}"
+               Name="p2card3"
+               Source="{Binding P2_Card3}" />
+
+        <Image Grid.Column="4"
+               Grid.Row="0"
+               Style="{StaticResource CardStyle}"
+               Name="p2card4"
+               Source="{Binding P2_Card4}" />
+
+        <Image Grid.Column="5"
+               Grid.Row="0"
+               Style="{StaticResource CardStyle}"
+               Name="p2card5"
+               Source="{Binding P2_Card5}" />
+      
+        <TextBlock Grid.Column="0"
+                   Grid.Row="6"
+                   Style="{StaticResource ScoreTextStyle}"
+                   Text="{Binding P1_Score}" />
+
+        <TextBlock Grid.Column="0"
+                   Grid.Row="0"
+                   Style="{StaticResource ScoreTextStyle}"
+                   Text="{Binding P2_Score}" />
+    </Grid>
+</Page>

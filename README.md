@@ -1,1 +1,4 @@
-# wpf_engine
+Poker
+=====
+
+A poker game built with wpf.
